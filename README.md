@@ -52,7 +52,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#placeholderapi">Placeholder API</a></li>
+    <li><a href="#PlaceholderApi">PlaceholderApi</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -62,7 +62,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About The Plugin
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -129,7 +129,8 @@ _For more examples, please refer to the [Documentation](https://www.frostborn.ir
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Placeholder API
+<!-- PAPI -->
+## PlaceholderApi
 
 - [⁉]  %playerlevels_level%  | Show player current level
 - [⁉]  %playerlevels_xp%  | Show player current xp
@@ -138,6 +139,10 @@ _For more examples, please refer to the [Documentation](https://www.frostborn.ir
 
 
 Using [papi](https://www.spigotmc.org/resources/placeholderapi.6245/) plugin you are able to use this feature, simply [download](https://www.spigotmc.org/resources/placeholderapi.6245/) the plugin and drag and drop it into your plugins folder and restart the server.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!-- ROADMAP -->
 ## Roadmap
 
