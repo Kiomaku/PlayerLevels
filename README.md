@@ -68,7 +68,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-this is the best player level plugin system that you can find out for free todays!
+this is the best player level plugin system that you can find out for free nowdays!
 
 Here's why:
 * Supports 2 type of Database [Mysql / Sqlite] 💨
