@@ -19,14 +19,14 @@
   <h3 align="center">PlayerLevels</h3>
 
   <p align="center">
-    Best minecraft levels plugin!
+    ❄🎄 Minecraft Player Levels Plugin ❄🎄 | 📝 Fully Configurable 📝 | 📅 Database Support [Mysql / Sqlite] 📅 | Messages / Custom Reward / Xp per Level and more!🔥 | Placeholder api support! |
     <br />
     <a href="https://www.frostborn.ir/plugins/playerlevels/doc"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">Download Last Release</a>
+    <a href="https://github.com/Kiomaku/PlayerLevels/releases/latest">Download Last Release</a>
     &middot;
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/kiomaku/PlayerLevel/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
     <a href="https://github.com/kiomaku/PlayerLevel/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
@@ -54,7 +54,6 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#placeholderapi">Placeholder API</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -100,6 +99,7 @@ This section should list any major frameworks/libraries used to create the plugi
 
 this is an example for you to how get started working and using my plugin.
 
+
 ### Prerequisites
 
 heres all the requirment listed for you to have the plugin installed on your own server.
@@ -129,8 +129,15 @@ _For more examples, please refer to the [Documentation](https://www.frostborn.ir
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Placeholder API
+
+- [⁉]  %playerlevels_level%  | Show player current level
+- [⁉]  %playerlevels_xp%  | Show player current xp
+- [⁉]  %playerlevels_toplevel_[number]%  | Show top [number] player level
+- [⁉]  %playerlevels_topname_[number]%  | Show top [number] player name
 
 
+Using [papi](https://www.spigotmc.org/resources/placeholderapi.6245/) plugin you are able to use this feature, simply [download](https://www.spigotmc.org/resources/placeholderapi.6245/) the plugin and drag and drop it into your plugins folder and restart the server.
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -154,14 +161,6 @@ See the [open issues](https://github.com/kiomaku/PlayerLevels/issues) for a full
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the Plugin development License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
