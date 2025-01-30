@@ -52,6 +52,8 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#Commands">Commands</a></li>
+    <li><a href="#Permissions">Permissions</a></li>
     <li><a href="#PlaceholderApi">PlaceholderApi</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -127,6 +129,40 @@ Heres some examples to use the commands link down below:
 
 _For more examples, please refer to the [Documentation](https://www.frostborn.ir/plugins/playerlevels/usage)_
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Commands  -->
+
+## Commands:
+/playerlevels addlevel [player] [amount]  - > add level to the desire player 
+/playerlevels addxp [player] [amount]  - > add xp to the desire player 
+/playerlevels takelevel [player] [amount]  - > take level from the desire player 
+/playerlevels takexp [player] [amount]  - > take xp to from desire player 
+/playerlevels level - > see your current level
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Permissions  -->
+
+## Permissions:
+   playerlevels.use:
+    description: Permission to use the PlayerLevels commands
+    default: op
+  playerlevels.addxp:
+    description: Allows adding XP to players
+    default: op
+  playerlevels.takexp:
+    description: Allows removing XP from players
+    default: op
+  playerlevels.addlevel:
+    description: Allows adding levels to players
+    default: op
+  playerlevels.takelevel:
+    description: Allows removing levels from players
+    default: op
+
+
+    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- PAPI -->
