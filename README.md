@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kiomaku/PlayerLevel">
-    <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/037/428/original/lainsmall2.gif?1655370785" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">PlayerLevels</h3>
