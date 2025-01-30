@@ -1,0 +1,60 @@
+database:
+  type: "sqlite" # Options: "mysql" or "sqlite"
+
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    user: "root"
+    password: "password"
+
+  sqlite:
+    file: "playerlevels.db"
+
+prefix: "&7[PlayerLevels]"
+
+messages:
+  level_up: "&aCongratulations, %player_name%! You have reached level %level%!"
+  reward_received: "&bYou received a reward for reaching level %level%!"
+  xp_received: "&aYou received %xp% XP!"
+  invalid_usage: "&cUsage: /addxp <amount>"
+  invalid_number: "&cPlease enter a valid number!"
+  xp-received: "§aYou received {amount} XP!"
+  xp-removed: "§a{amount} XP has been removed!"
+  level-gained: "§aYou gained {amount} levels!"
+  level-removed: "§a{amount} levels have been removed!"
+  level-info: "§eYour Level: §a{level}\n§eYour XP: §a{xp} XP"
+  unknown-subcommand: "§cUnknown subcommand! Use /playerlevels help"
+  help-header: "§6[PlayerLevels] Commands:"
+  help-addxp: "§e/playerlevels addxp <amount> - §aAdds XP"
+  help-takexp: "§e/playerlevels takexp <amount> - §aRemoves XP"
+  help-addlevel: "§e/playerlevels addlevel <amount> - §aAdds Levels"
+  help-setlevel: "§e/playerlevels setlevel <amount> - §aSets Level"
+  help-takelevel: "§e/playerlevels takelevel <amount> - §aRemoves Levels"
+  help-level: "§e/playerlevels level - §aShows your XP & Level"
+  help-help: "§e/playerlevels help - §aShows this help message"
+  invalid-xp: "§cInvalid XP amount!"
+  invalid-level: "§cInvalid level amount!"
+  only-players: "§cOnly players can use this command!"
+  usage: "§aUsage: /playerlevels <addxp|setxp|takexp|addlevel|setlevel|takelevel|level|help>"
+levels:
+  1:
+    need_xp: 10
+  2:
+    need_xp: 25
+  3:
+    need_xp: 50
+
+rewards:
+  1:
+    item:
+      material: "DIAMOND_SWORD"
+      amount: 1
+      name: "§bEpic Sword"
+      lore:
+        - "§7Congratulations!"
+    command: "say Congratulations %player_name%!"
+    vault: 100
+  2:
+    command: "say Congratulations %player_name%, you leveled up!"
+    vault: 200.0

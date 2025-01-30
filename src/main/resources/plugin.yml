@@ -1,0 +1,29 @@
+name: PlayerLevels
+version: '0.1 BETA'
+main: me.barsam.playerLevels.PlayerLevels
+depend:
+  - Vault
+softdepend:
+  - PlaceholderAPI
+commands:
+  playerlevels:
+    description: Main command for PlayerLevels plugin
+    usage: /playerlevels <subcommand>
+    aliases: [plvl]
+    permission: playerlevels.use
+permissions:
+  playerlevels.use:
+    description: Permission to use the PlayerLevels commands
+    default: op
+  playerlevels.addxp:
+    description: Allows adding XP to players
+    default: op
+  playerlevels.takexp:
+    description: Allows removing XP from players
+    default: op
+  playerlevels.addlevel:
+    description: Allows adding levels to players
+    default: op
+  playerlevels.takelevel:
+    description: Allows removing levels from players
+    default: op
