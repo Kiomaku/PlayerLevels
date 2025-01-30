@@ -206,6 +206,7 @@ a big thanks to the sponser of this plugin frost born mc! a roleplay mincraft se
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
+[logo]: images/logo.png
 [Kotlin]: https://img.shields.io/badge/Kotlin-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Kotlin-url]: https://kotlinlang.org/
 [Mysql]: https://img.shields.io/badge/Mysql-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
