@@ -66,7 +66,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Plugin
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 this is the best player level plugin system that you can find out for free nowdays!
 
