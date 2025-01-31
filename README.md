@@ -133,11 +133,11 @@ _For more examples, please refer to the [Documentation](https://www.frostborn.ir
 <!-- Commands  -->
 
 ## Commands:
-/playerlevels addlevel [player] [amount]  - > add level to the desire player 
-/playerlevels addxp [player] [amount]  - > add xp to the desire player 
-/playerlevels takelevel [player] [amount]  - > take level from the desire player 
-/playerlevels takexp [player] [amount]  - > take xp to from desire player 
-/playerlevels level - > see your current level
+* /playerlevels addlevel [player] [amount]  - > add level to the desire player 
+* /playerlevels addxp [player] [amount]  - > add xp to the desire player 
+* /playerlevels takelevel [player] [amount]  - > take level from the desire player 
+* /playerlevels takexp [player] [amount]  - > take xp to from desire player 
+* /playerlevels level - > see your current level
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
