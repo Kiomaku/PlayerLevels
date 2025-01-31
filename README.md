@@ -144,21 +144,21 @@ _For more examples, please refer to the [Documentation](https://www.frostborn.ir
 <!-- Permissions  -->
 
 ## Permissions:
-   playerlevels.use:
-    description: Permission to use the PlayerLevels commands
-    default: op
-  playerlevels.addxp:
-    description: Allows adding XP to players
-    default: op
-  playerlevels.takexp:
-    description: Allows removing XP from players
-    default: op
-  playerlevels.addlevel:
-    description: Allows adding levels to players
-    default: op
-  playerlevels.takelevel:
-    description: Allows removing levels from players
-    default: op
+* playerlevels.use:
+    | description: Permission to use the PlayerLevels commands
+    | default: op
+* playerlevels.addxp:
+    | description: Allows adding XP to players
+    | default: op
+* playerlevels.takexp:
+    | description: Allows removing XP from players
+    | default: op
+* playerlevels.addlevel:
+    | description: Allows adding levels to players
+    | default: op
+* playerlevels.takelevel:
+    | description: Allows removing levels from players
+    | default: op
 
 
     
