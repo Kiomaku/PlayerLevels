@@ -47,7 +47,7 @@ class PlayerLevels : JavaPlugin() {
         } else {
             null
         }
-        RewardManager.initialize(config, economy)
+        RewardManager.initialize(economy)
 
         // Load all player data from the database
         PlayerDataManager.loadAllPlayerData()
@@ -83,7 +83,7 @@ class PlayerLevels : JavaPlugin() {
     fun reloadPluginConfig() {
         reloadConfig()
         cacheConfig()
-        RewardManager.initialize(config, Bukkit.getServicesManager().getRegistration(Economy::class.java)?.provider)
+        RewardManager.initialize(Bukkit.getServicesManager().getRegistration(Economy::class.java)?.provider)
         logger.info("Configuration reloaded successfully!")
     }
 }
