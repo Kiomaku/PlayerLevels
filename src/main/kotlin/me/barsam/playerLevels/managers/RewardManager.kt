@@ -3,61 +3,54 @@ package me.barsam.playerLevels.managers
 import net.milkbowl.vault.economy.Economy
 import org.bukkit.Bukkit
 import org.bukkit.Material
-import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
 import java.util.UUID
+import me.barsam.playerLevels.PlayerLevels
 
 object RewardManager {
-    private lateinit var config: FileConfiguration
     private var economy: Economy? = null
 
-    fun initialize(config: FileConfiguration, economy: Economy?) {
-        this.config = config
+    fun initialize(economy: Economy?) {
         this.economy = economy
     }
 
     fun giveRewards(uuid: UUID, level: Int) {
-        if (!this::config.isInitialized) {
-            Bukkit.getLogger().severe("[PlayerLevels] ERROR: RewardManager config is not initialized!")
-            return
-        }
+        val config = PlayerLevels.instance
+        val cachedConfig = config.getCachedConfigValue("rewards.$level") as? Map<*, *> ?: return
 
         val player: Player = Bukkit.getPlayer(uuid) ?: return
-        val rewardsSection = config.getConfigurationSection("rewards.$level") ?: return
 
         // Give item
-        if (rewardsSection.contains("item")) {
-            val itemConfig = rewardsSection.getConfigurationSection("item")!!
-            val material = Material.matchMaterial(itemConfig.getString("material", "STONE")!!) ?: return
-            val itemStack = ItemStack(material, itemConfig.getInt("amount", 1))
+        val itemConfig = cachedConfig["item"] as? Map<*, *> ?: return
+        if (itemConfig.isNotEmpty()) {
+            val material = Material.matchMaterial(itemConfig["material"] as? String ?: "STONE") ?: return
+            val itemStack = ItemStack(material, (itemConfig["amount"] as? Int) ?: 1)
             val meta: ItemMeta = itemStack.itemMeta ?: return
 
-            meta.setDisplayName(itemConfig.getString("name")?.replace("&", "§"))
-            meta.lore = itemConfig.getStringList("lore").map { it.replace("&", "§") }
+            meta.setDisplayName((itemConfig["name"] as? String)?.replace("&", "§"))
+            meta.lore = (itemConfig["lore"] as? List<String>)?.map { it.replace("&", "§") } ?: emptyList()
 
             itemStack.itemMeta = meta
             player.inventory.addItem(itemStack)
         }
 
         // Run command
-        if (rewardsSection.contains("command")) {
-            val command = rewardsSection.getString("command", "")?.replace("%player_name%", player.name)
-            if (!command.isNullOrEmpty()) {
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command)
-            }
+        val command = cachedConfig["command"] as? String
+        command?.let {
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), it.replace("%player_name%", player.name))
         }
 
         // Give Vault money
-        if (rewardsSection.contains("vault")) {
-            val amount = rewardsSection.getDouble("vault")
-            economy?.depositPlayer(player, amount)
+        val vaultAmount = cachedConfig["vault"] as? Double
+        if (vaultAmount != null) {
+            economy?.depositPlayer(player, vaultAmount)
         }
 
-        config.getString("messages.reward_received", "")
-            ?.let {
-                player.sendMessage(it.replace("%level%", level.toString()))
-            }
+        val rewardMessage = config.getCachedConfigValue("messages.reward_received") as? String
+        rewardMessage?.let {
+            player.sendMessage(it.replace("%level%", level.toString()))
+        }
     }
 }

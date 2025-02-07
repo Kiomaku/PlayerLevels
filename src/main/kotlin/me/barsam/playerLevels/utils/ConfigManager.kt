@@ -6,10 +6,18 @@ import org.bukkit.ChatColor
 object ConfigManager {
     private val plugin = PlayerLevels.instance
 
-    private val prefix: String = plugin.config.getString("prefix", "&7[PlayerLevels]")!!
+    private var prefix: String = "&7[PlayerLevels]"
+
+    init {
+        reload()
+    }
 
     fun getMessage(key: String): String {
-        val message = plugin.config.getString("messages.$key", "&cMessage not found!")!!
+        val message = PlayerLevels.instance.getCachedConfigValue("messages.$key") as? String ?: "&cMessage not found!"
         return ChatColor.translateAlternateColorCodes('&', "$prefix $message")
+    }
+
+    fun reload() {
+        prefix = PlayerLevels.instance.getCachedConfigValue("prefix") as? String ?: "&7[PlayerLevels]"
     }
 }

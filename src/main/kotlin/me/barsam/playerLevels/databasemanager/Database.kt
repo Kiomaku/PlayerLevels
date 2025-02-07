@@ -10,18 +10,18 @@ object Database {
     private lateinit var connection: Connection
 
     fun initDatabase() {
-        val config = PlayerLevels.instance.config
-        val databaseType = config.getString("database.type") ?: "mysql"
+        val config = PlayerLevels.instance
+        val databaseType = config.getCachedConfigValue("database.type") as? String ?: "mysql"
 
         try {
             connection = when (databaseType.lowercase()) {
-                "sqlite" -> initSQLite(config.getString("database.sqlite.file") ?: "playerlevels.db")
+                "sqlite" -> initSQLite(config.getCachedConfigValue("database.sqlite.file") as? String ?: "playerlevels.db")
                 "mysql" -> initMySQL(
-                    config.getString("database.mysql.host") ?: "localhost",
-                    config.getInt("database.mysql.port"),
-                    config.getString("database.mysql.database") ?: "minecraft",
-                    config.getString("database.mysql.user") ?: "root",
-                    config.getString("database.mysql.password") ?: "password"
+                    config.getCachedConfigValue("database.mysql.host") as? String ?: "localhost",
+                    (config.getCachedConfigValue("database.mysql.port") as? Int) ?: 3306,
+                    config.getCachedConfigValue("database.mysql.database") as? String ?: "minecraft",
+                    config.getCachedConfigValue("database.mysql.user") as? String ?: "root",
+                    config.getCachedConfigValue("database.mysql.password") as? String ?: "password"
                 )
                 else -> throw IllegalArgumentException("Invalid database type in config.yml")
             }

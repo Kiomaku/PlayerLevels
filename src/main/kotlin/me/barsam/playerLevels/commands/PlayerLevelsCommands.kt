@@ -1,5 +1,6 @@
 package me.barsam.playerLevels.commands
 
+import me.barsam.playerLevels.PlayerLevels
 import me.barsam.playerLevels.databasemanager.PlayerDataManager
 import me.barsam.playerLevels.utils.ConfigManager
 import org.bukkit.Bukkit
@@ -85,6 +86,19 @@ class PlayerLevelsCommand : CommandExecutor, TabCompleter {
                         PlayerDataManager.takeLevel(uuid, amount)
                         player.sendMessage(ConfigManager.getMessage("level-removed").replace("{amount}", amount.toString()))
                     }
+                    "reload" -> {
+                        if (!player.hasPermission("playerlevels.reload")) {
+                            player.sendMessage(ConfigManager.getMessage("no-permission"))
+                            return true
+                        }
+
+                        // Reload the plugin configuration
+                        PlayerLevels.instance.reloadPluginConfig()
+
+                        // Notify the player that the configuration has been reloaded
+                        player.sendMessage(ConfigManager.getMessage("config-reloaded"))
+                    }
+
                 }
             }
 
@@ -107,6 +121,7 @@ class PlayerLevelsCommand : CommandExecutor, TabCompleter {
                 player.sendMessage(ConfigManager.getMessage("help-setlevel"))
                 player.sendMessage(ConfigManager.getMessage("help-takelevel"))
                 player.sendMessage(ConfigManager.getMessage("help-level"))
+                player.sendMessage(ConfigManager.getMessage("help-reload"))
                 player.sendMessage(ConfigManager.getMessage("help-help"))
             }
 
@@ -120,10 +135,10 @@ class PlayerLevelsCommand : CommandExecutor, TabCompleter {
 
     override fun onTabComplete(sender: CommandSender, command: Command, alias: String, args: Array<out String>): List<String> {
         if (args.isEmpty()) {
-            return listOf("addxp", "takexp", "addlevel", "takelevel", "level", "help")
+            return listOf("addxp", "takexp", "addlevel", "takelevel", "level", "reload", "help")
         }
 
-        val subCommands = listOf("addxp", "takexp", "addlevel", "takelevel", "level", "help")
+        val subCommands = listOf("addxp", "takexp", "addlevel", "takelevel", "level", "reload", "help")
 
         return when (args.size) {
             1 -> StringUtil.copyPartialMatches(args[0], subCommands, mutableListOf())
