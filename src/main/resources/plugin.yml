@@ -1,5 +1,5 @@
 name: PlayerLevels
-version: '0.1 BETA'
+version: '0.2 BETA'
 main: me.barsam.playerLevels.PlayerLevels
 depend:
   - Vault
